@@ -518,6 +518,7 @@
             // 
             // buttonFallingCnt
             // 
+            this.buttonFallingCnt.Enabled = false;
             this.buttonFallingCnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonFallingCnt.Location = new System.Drawing.Point(293, 381);
             this.buttonFallingCnt.Name = "buttonFallingCnt";
@@ -525,10 +526,10 @@
             this.buttonFallingCnt.TabIndex = 37;
             this.buttonFallingCnt.Text = "0";
             this.buttonFallingCnt.UseVisualStyleBackColor = true;
-            this.buttonFallingCnt.Click += new System.EventHandler(this.buttonOthersCnt_Click);
             // 
             // buttonSittingCnt
             // 
+            this.buttonSittingCnt.Enabled = false;
             this.buttonSittingCnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonSittingCnt.Location = new System.Drawing.Point(293, 241);
             this.buttonSittingCnt.Name = "buttonSittingCnt";
@@ -536,7 +537,6 @@
             this.buttonSittingCnt.TabIndex = 36;
             this.buttonSittingCnt.Text = "0";
             this.buttonSittingCnt.UseVisualStyleBackColor = true;
-            this.buttonSittingCnt.Click += new System.EventHandler(this.buttonSittingCnt_Click);
             // 
             // buttonFalling
             // 
@@ -584,6 +584,7 @@
             // 
             // buttonSitDownCnt
             // 
+            this.buttonSitDownCnt.Enabled = false;
             this.buttonSitDownCnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonSitDownCnt.Location = new System.Drawing.Point(293, 346);
             this.buttonSitDownCnt.Name = "buttonSitDownCnt";
@@ -591,10 +592,10 @@
             this.buttonSitDownCnt.TabIndex = 27;
             this.buttonSitDownCnt.Text = "0";
             this.buttonSitDownCnt.UseVisualStyleBackColor = true;
-            this.buttonSitDownCnt.Click += new System.EventHandler(this.buttonSitDownCnt_Click);
             // 
             // buttonStandUpCnt
             // 
+            this.buttonStandUpCnt.Enabled = false;
             this.buttonStandUpCnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonStandUpCnt.Location = new System.Drawing.Point(293, 311);
             this.buttonStandUpCnt.Name = "buttonStandUpCnt";
@@ -602,10 +603,10 @@
             this.buttonStandUpCnt.TabIndex = 26;
             this.buttonStandUpCnt.Text = "0";
             this.buttonStandUpCnt.UseVisualStyleBackColor = true;
-            this.buttonStandUpCnt.Click += new System.EventHandler(this.buttonStandUpCnt_Click);
             // 
             // buttonWalkingCnt
             // 
+            this.buttonWalkingCnt.Enabled = false;
             this.buttonWalkingCnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonWalkingCnt.Location = new System.Drawing.Point(293, 276);
             this.buttonWalkingCnt.Name = "buttonWalkingCnt";
@@ -613,10 +614,10 @@
             this.buttonWalkingCnt.TabIndex = 25;
             this.buttonWalkingCnt.Text = "0";
             this.buttonWalkingCnt.UseVisualStyleBackColor = true;
-            this.buttonWalkingCnt.Click += new System.EventHandler(this.buttonWalkingCnt_Click);
             // 
             // buttonStandingCnt
             // 
+            this.buttonStandingCnt.Enabled = false;
             this.buttonStandingCnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonStandingCnt.Location = new System.Drawing.Point(293, 206);
             this.buttonStandingCnt.Name = "buttonStandingCnt";
@@ -624,7 +625,6 @@
             this.buttonStandingCnt.TabIndex = 24;
             this.buttonStandingCnt.Text = "0";
             this.buttonStandingCnt.UseVisualStyleBackColor = true;
-            this.buttonStandingCnt.Click += new System.EventHandler(this.buttonStandingCnt_Click);
             // 
             // numericUpDownCombineData
             // 
