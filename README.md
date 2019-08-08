@@ -45,3 +45,50 @@ All instructions are based on `NUITRACK 1.4.0`
 
 ## 3 Software Framework
 ### 3-1 Interface-1: Grab
+![interface-1](./img/interface-1.png "Interface-1: Grab")
+#### 1. Show Image
+  Display the RGB image, and the skeleton data by red square dots.
+#### 2. Show Label
+  Display the judged gesture: `Standing`, `Sitting`, `Walking`, `StandUp`, `SitDown`, `Falling`.
+#### 3. Log Info
+  Log some important information during running.
+#### 4. Time Info
+  Log some time information like current processing time, average processing time and so on.
+#### 5. Grab
+  Start or Stop the camera grab.
+#### 6. Auto
+  Enabled or Disabled recognizing the posture automatically.
+#### 7. Write
+  Enabled or Disabled writing skeleton data to local disk.
+#### 8. Skeleton Data
+  Display the skeleton data, 25 points (XYZ, 75 float data) per frame.
+#### 9. Cam Info
+  - FPS: Frame per second, also timer grab interval equals 1000 FPS.
+  - W: The width of image, read only.
+  - H: The height of image, read only.
+#### 10. Load
+  Load a .pb model.
+#### 11. Test
+  Open the file dialog and choose a sample. Then make the prediction using the loaded model.
+#### 12. Tap Option
+  Click different tap option to switch between `Grab` and `Label`. `Grab` is used for grab videos. `Label` is used for making labels.
+### 3-2 Interface-2: Label
+![interface-2](./img/interface-2.png "Interface-2: Label")
+#### 13. Load Data
+  Select a `.txt` file. The file contains frame indices and skeleton data during the whole video.
+#### 14. Image List
+  Display the frame list. The small flag indicates that the data of the index is valid. The last number means this frame has been labeled. Number means the label index.
+#### 15. Frame Config
+  - steps: how many frames does a sample need in maximum. Default: 60
+  - cover: how many frames is coincided between two samples. Default: 30
+#### 16. Select
+  - Select: Select and display next batch frames automatically. Maximum selection number is `steps`
+  - ScrollBar: Display speed control. Left: Slow, Right: Fast
+#### 17. Generate
+  - In `Auto` mode: Click `Generate` button, it will process all the data in the current frame list, then generate many samples according to `steps` and `cover`
+  - In `Mann` mode: Click `Generate` button, it will process only the selected frames in the frame list, then generate only one sample
+  - **If 'shift' key is pressed at the same time**, click `Generate` button, the program request you to choose a folder in wich all the data file locate. After you choose it, the program will automatically process all the existing data folder.
+#### 18. Search
+  Choose an existing label from the left box. Then click `◀` and `▶` to search for the last or next one.
+#### 19. Make Label
+  There are 6 labels when labeling. Choose at least one frame in the frame list 
