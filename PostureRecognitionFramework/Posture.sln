@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Posture", "Posture\Posture.csproj", "{EAE5D6AD-17F2-4102-B65D-4AC09D259388}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAE5D6AD-17F2-4102-B65D-4AC09D259388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAE5D6AD-17F2-4102-B65D-4AC09D259388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAE5D6AD-17F2-4102-B65D-4AC09D259388}.Debug|x64.ActiveCfg = Debug|x64
+		{EAE5D6AD-17F2-4102-B65D-4AC09D259388}.Debug|x64.Build.0 = Debug|x64
+		{EAE5D6AD-17F2-4102-B65D-4AC09D259388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAE5D6AD-17F2-4102-B65D-4AC09D259388}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAE5D6AD-17F2-4102-B65D-4AC09D259388}.Release|x64.ActiveCfg = Release|x64
+		{EAE5D6AD-17F2-4102-B65D-4AC09D259388}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8175081E-C19D-4577-B863-80E0B386B3F5}
+	EndGlobalSection
+EndGlobal
