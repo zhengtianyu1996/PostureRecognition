@@ -76,7 +76,7 @@ All instructions are based on `NUITRACK 1.4.0`
 ![interface-2](./img/interface-2.png "Interface-2: Label")
 #### 13. Load Data
   Select a `.txt` file. The file contains frame indices and skeleton data during the whole video.
-#### 14. Image List
+#### 14. Frame List
   Display the frame list. The small flag indicates that the data of the index is valid. The last number means this frame has been labeled. Number means the label index.
 #### 15. Frame Config
   - steps: how many frames does a sample need in maximum. Default: 60
@@ -91,4 +91,8 @@ All instructions are based on `NUITRACK 1.4.0`
 #### 18. Search
   Choose an existing label from the left box. Then click `◀` and `▶` to search for the last or next one.
 #### 19. Make Label
-  There are 6 labels when labeling. Choose at least one frame in the frame list 
+  There are 6 labels when labeling. Choose at least one frame in the frame list, then click any button with the best label. It will update a `Data_labels.md` in the Raw data Output folder to record all the labels.
+#### 20. Count
+  The number showed the current number of each valid label.
+#### 21. Delete
+  If you want to cancl some existing labels to Empty, then choose the target frames in frame list, Click `Del`.
