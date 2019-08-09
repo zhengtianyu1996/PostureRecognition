@@ -136,4 +136,4 @@ All instructions are based on `NUITRACK 1.4.0`
 ## 4 Deep Learning
 All the code is mainly based on `Python 3.7` and `Keras`. I utilize Bidirectional LSTM layer and Dense layer. The final accuracy is around 91%.
 ### 4-1 Network structure
-Combine BiLSTM and Dense layer together.
+Combine BiLSTM and Dense layer together.   
