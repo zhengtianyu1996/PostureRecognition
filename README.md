@@ -33,7 +33,7 @@ All instructions are based on `NUITRACK 1.4.0`
 - [Installation Instructions ](http://download.3divi.com/Nuitrack/doc/Installation_page.html)   
   1. Download and run [nuitrack-windows-x64.exe](http://download.3divi.com/Nuitrack/platforms/nuitrack-windows-x64.exe) (for Windows 64-bit). Follow the instructions of the NUITRACK setup assistant. 
   2. Re-login to let the system changes take effect.
-  3. [Required] Make sure that you have installed Microsoft Visual C++ Redistributable for Visual Studio on your computer. If not, install this package depending on your VS version and architecture:   
+  3. Make sure that you have installed Microsoft Visual C++ Redistributable for Visual Studio on your computer. If not, install this package depending on your VS version and architecture:   
       + [Visual C++ Redistributable 2015 (x64)](https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x64.exe)
       + [Visual C++ Redistributable 2017 (x64)](https://aka.ms/vs/15/release/VC_redist.x64.exe)
 
@@ -67,7 +67,7 @@ All instructions are based on `NUITRACK 1.4.0`
   - W: The width of image, read only.
   - H: The height of image, read only.
 #### 10. Load
-  Load a .pb model.
+  Load a `.pb` model.
 #### 11. Test
   Open the file dialog and choose a sample. Then make the prediction using the loaded model.
 #### 12. Tap Option
