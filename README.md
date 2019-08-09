@@ -95,4 +95,13 @@ All instructions are based on `NUITRACK 1.4.0`
 #### 20. Count
   The number showed the current number of each valid label.
 #### 21. Delete
-  If you want to cancl some existing labels to Empty, then choose the target frames in frame list, Click `Del`.
+  If you want to cancl some existing labels to Empty, then choose the target frames in frame list, Click `Del`.   
+
+### 3-3 Folder Tree
++-- Debug: Application.StartupPath      
+|&nbsp;&nbsp;&nbsp;&nbsp;+-- Output: Save the skeleton data   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- yyyy-MM-dd HH-mm-ss: Save the skeleton data    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- Data.txt: Indices and skeleton data   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- Data_labels.md: Indices and labels    
+
+### 3-4 Running
