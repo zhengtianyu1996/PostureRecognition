@@ -136,4 +136,27 @@ All instructions are based on `NUITRACK 1.4.0`
 ## 4 Deep Learning
 All the code is mainly based on `Python 3.7` and `Keras`. I utilize Bidirectional LSTM layer and Dense layer. The final accuracy is around 91%.
 ### 4-1 Network structure
-Combine BiLSTM and Dense layer together.   
+I use Keras, and combine BiLSTM and Dense layer together. Due to the `Standing` and `Walking` is hard to distinguish. Even in the software framework, I make 2 labels for them. But when it turns to deep learning training, I regard these 2 labels as one label `Walking`. So there are only 5 classes in the end.   
+![network](./img/network.png "network")
+### 4-2 Data distribution
+#### By frame numbers:   
+|       |  Sitting | Walking | Standup | Sitdown | Falling |   All   |
+| :---: | :------: | :-----: | :-----: | :-----: | :-----: | :------:|
+| train |  10744   |  13434  |   8947  |   3334  |  13270  |  49729  |
+|  val  |    0     |    0    |    0    |    0    |    0    |    0    |
+| test  |   2750   |  3779   |  2407   |   762   |  2877   |  12575  |
+|  All  |   13494  |  17213  |  11354  |   4096  |  16147  |  62304  |
+#### By sample numbers (many frames in one sample):     
+|       |  Train | Val | Test | All |
+| :---: | :------: | :-----: | :-----: | :-----: |
+| train |  892   |  0  |   223  |   1115  |
+### 4-3 Training Parameters
+- batch_size_train=16
+- batch_size_val=8
+- epochs=15
+- learning_rate=1e-4
+- learning_rate_decay=1e-6
+## 5 Issues
+### 5-1 Unstable detecting for human joints because of a high position
+### 5-2 More data
+## 6 Future Plan
