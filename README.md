@@ -121,4 +121,13 @@ All instructions are based on `NUITRACK 1.4.0`
 2. Click `11. Test` to open the file dialog and choose a sample. Then make the prediction using the loaded model. The accuracy result will shown in `3. Log Info` area.
 #### 3-4-5 Label
 1. Click `12. Tap Option` to switch the program into Label mode.
-2. Click 
+2. Click `13. Load Data` to choose a `Data.txt` from the output folder. Then load the frames and skeleton data. The frame will be shown in `1. Show Image` area, the skeleton data will be shown in `14. Frame List` area. The small flag in the list indicates that the data under the index is valid.
+3. Choose at least one frame in `14. Frame List`, then click the right button in `19. Make Label`, all the chosen frames will be labelled immediately (it's overwritten). The `20. Count` will count the number in each label.
+4. If you made wrong labels and want to CANCL them, click `21. Delete`, the label will be reset to empty.
+#### 3-4-6 Select automatically
+- When you are making label, you don't neet to select frames mannually. You can set `15. Frame Config`. The first number steps means how many frames does a sample need in maximum, default value is 60. The second number cover means how many frames is coincided between two samples, default value is 30.
+- Click `Select` button to do the automatic selection. The program will always generate a batch with `steps` frames. Move the scrollbar to control the display speed.
+#### 3-4-7 Generate
+- If you choose `Auto` mode, click the `Generate` button. The program will generate many samples from the whole `14. Frame List`.
+- If you choose `Mann` mode, you need to choose some frames and click the `Generate` button. The program will generate only one sample according to the chosen frames.
+- [One-Click Function] If you pressed `Shift` key, no matter in which mode, click the `Generate` button. Choose a father folder that contains all the `yyyy-MM-dd HH-mm-ss` folders. The program will automatically generate samples through all the folders.
