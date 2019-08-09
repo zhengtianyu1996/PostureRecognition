@@ -57,7 +57,7 @@ def data_generator_lstm(file_list_info, shape=None, batch_size=32, one_hot=True,
             curIndex=0
             while line:
                 line_arr=np.array(line.split('\t'), dtype=float)
-                label_sample[curIndex] = line_arr[1]-1  # -1 because we replace 0 by 2
+                label_sample[curIndex] = line_arr[1] - 1  # -1 because we replace 0 by 2
                 data = line_arr[2:]
                 data = np.reshape(data, [1,-1])
                 data_sample[curIndex] = data

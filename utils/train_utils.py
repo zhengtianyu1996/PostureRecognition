@@ -96,6 +96,8 @@ def predict_from_generator(model, data_generator, step, save_cm=True, save_path_
     # if the label is -1, we need to use sample_weight to ignore it. Then set all -1 label to 1
     sample_weight = np.where(targets > -1, 1, 0)
 
+    # abs is used to set -1 to 1, to avoid 6*6 confusion matrix
+    targets = np.abs(targets)
     # accuracy of the whole dataset
     acc = accuracy_score(targets, predictions, sample_weight=sample_weight)
     # confusion matrix
@@ -128,7 +130,7 @@ def predict_from_generator_save_error(model, data_generator, step, threshold=20,
     """
 
     # if rm=True, remove the existing files in error url
-    if rm:
+    if rm and os.path.exists(save_path_error):
         shutil.rmtree(save_path_error)
     if not os.path.exists(save_path_error):
         os.mkdir(save_path_error)
@@ -180,6 +182,8 @@ def predict_from_generator_save_error(model, data_generator, step, threshold=20,
     kk=np.append(targets_re,zeross,axis=1)
     sample_weight_final=np.where(np.diff(kk)==-1,1,0).reshape(-1)
 
+    # abs is used to set -1 to 1, to avoid 6*6 confusion matrix
+    targets = np.abs(targets)
     # accuracy of the whole dataset
     acc = accuracy_score(targets, predictions, sample_weight=sample_weight)
     # accuracy of only the last valid data

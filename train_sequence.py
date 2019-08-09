@@ -8,6 +8,7 @@
 # @Version : 1
 # @Feature :
 1. Basic program for BiLSTM network
+2. Remember to run `./data/sample_reduce.py` first to generate necessary data
 
 """
 import os
@@ -23,7 +24,7 @@ from keras_contrib.metrics import crf_viterbi_accuracy, crf_marginal_accuracy
 def main():
     # params
     path_data='./data/'
-    path_data_samples=path_data+'SamplesReduced/'
+    path_data_samples=path_data+'SamplesReduced/'    # run `./data/sample_reduce.py` first
     path_train='./train/'
     path_error='./error/'
 
