@@ -104,6 +104,20 @@ All instructions are based on `NUITRACK 1.4.0`
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- Data.txt: Indices and skeleton data   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- Data_labels.md: Indices and labels    
 
-### 3-4 RealTime Detecting
-### 3-4-1 Capture Only
-- 
+### 3-4 RealTime Predicting
+#### 3-4-1 Capture only
+- Make sure the depth camera is connected.
+- Click `5. Grab`, `1. Show Image` will display images in real time.
+#### 3-4-2 Capture while automatically predicting
+- Check `6. Auto` to choose a .pb model file. Then the program is in Auto mode. Click `5. Grab` to start capturing. The `2. Show Label` area will show the real time prediction.
+#### 3-4-3 Capture while writing data
+1. Firstly click `7. Write` button, the folder will be created under the `Output` folder with the format of current time `yyyy-MM-dd HH-mm-ss` as the folder name. For example, creating a folder named `2019-01-10 10-40-54`. 
+  - Further, in the `2019-01-10 10-40-54` folder, a txt file named `Data.txt` is generated. 
+  - `Data.txt`: The information of the skeleton data, also include the frame index. The first line is `Skeleton data (X, Y, Z) * 25 points. `, it will be ignored in the following processing. 
+2. Secondly click `5. Grab` button to capture image, at the same time, write images and skeleton data to the `Data.txt`. 
+- Tip: You can also check `6. Auto` and `7. Write` both. But the program will take more time to process.
+#### 3-4-4 Make a test
+1. Click `10. Load` to load an existing .pb model file.
+2. Click `11. Test` to open the file dialog and choose a sample. Then make the prediction using the loaded model. The accuracy result will shown in `3. Log Info` area.
+#### 3-4-5 Label
+
