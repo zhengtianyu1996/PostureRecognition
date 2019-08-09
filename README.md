@@ -131,3 +131,9 @@ All instructions are based on `NUITRACK 1.4.0`
 - If you choose `Auto` mode, click the `Generate` button. The program will generate many samples from the whole `14. Frame List`.
 - If you choose `Mann` mode, you need to choose some frames and click the `Generate` button. The program will generate only one sample according to the chosen frames.
 - [One-Click Function] If you pressed `Shift` key, no matter in which mode, click the `Generate` button. Choose a father folder that contains all the `yyyy-MM-dd HH-mm-ss` folders. The program will automatically generate samples through all the folders.
+#### 3-4-8 Search
+- Choose an existing label from the left box. Then click `◀` and `▶` to search for the last or next one.
+## 4 Deep Learning
+All the code is mainly based on `Python 3.7` and `Keras`. I utilize Bidirectional LSTM layer and Dense layer. The final accuracy is around 91%.
+### 4-1 Network structure
+Combine BiLSTM and Dense layer together.
