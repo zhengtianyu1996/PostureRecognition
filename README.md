@@ -98,11 +98,11 @@ All instructions are based on `NUITRACK 1.4.0`
   If you want to cancl some existing labels to Empty, then choose the target frames in frame list, Click `Del`.   
 
 ### 3-3 Folder Tree
-+-- Debug: Application.StartupPath      
-|&nbsp;&nbsp;&nbsp;&nbsp;+-- Output: Save the skeleton data   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- yyyy-MM-dd HH-mm-ss: Save the skeleton data    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- Data.txt: Indices and skeleton data   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- Data_labels.md: Indices and labels    
+>+-- Debug: Application.StartupPath      
+>|&nbsp;&nbsp;&nbsp;&nbsp;+-- Output: Save the skeleton data   
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- yyyy-MM-dd HH-mm-ss: Save the skeleton data    
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- Data.txt: Indices and skeleton data   
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- Data_labels.md: Indices and labels    
 
 ### 3-4 RealTime Predicting
 #### 3-4-1 Capture only
@@ -156,7 +156,29 @@ I use Keras, and combine BiLSTM and Dense layer together. Due to the `Standing` 
 - epochs=15
 - learning_rate=1e-4
 - learning_rate_decay=1e-6
+### 4-4 Accuracy
+#### With CRF
+|       |  Train | Train-Fall | Test | Test-Fall |
+| :---: | :------: | :-----: | :-----: | :-----: |
+| 1 |  0.9193   |  0.9414  |   0.9026  |   0.9369  |
+| 2 |  0.9188   |  0.9469  |   0.9071  |   0.9529  |
+| 3 |  0.9197   |  0.9541  |   0.8823  |   0.9449  |
+| 4 |  0.9180   |  0.9502  |   0.8849  |   0.9323  |
+| 5 |  0.9230   |  0.9493  |   0.8803  |   0.9374  |
+#### Without CRF
+|       |  Train | Train-Fall | Test | Test-Fall |
+| :---: | :------: | :-----: | :-----: | :-----: |
+| 1 |  0.9244   |  0.9552  |   0.8976  |   0.9156  |
+| 2 |  0.9229   |  0.9266  |   0.8741  |   0.8220  |
+| 3 |  0.9260   |  0.9437  |   0.8964  |   0.9142  |
+| 4 |  0.9137   |  0.9387  |   0.8983  |   0.9415  |
+| 5 |  0.9138   |  0.9426  |   0.8996  |   0.9357  |   
+
+Tip: `Train-Fall` means only the `Falling` label accuracy in train set. Because this project puts more focus on the `Falling` posture.
 ## 5 Issues
 ### 5-1 Unstable detecting for human joints because of a high position
+Compared to [ZpRoc](https://github.com/ZpRoc/GestureRecognition), I fix the depth camera with a pillar in a high position (he put the depth camera on the desktop). It influences the performance of Nuitrack to detect the joints. Because Nuitrack suggests developers to put camera in a height [around 0.8m-1.2m](http://download.3divi.com/Nuitrack/doc/Preparations_page.html), but mine is around 2m. I guess the reason of the bad performance is because of the perspective relationship.
 ### 5-2 More data
+I have only 1115 samples in total. Each of them contains about 60 frames. It's not a big dataset. So there should be more data.
 ## 6 Future Plan
+Due to the bad performance of Nuitrack in detecting joints. We plan to use the raw depth image from the depth camera. Find where is the man, then find what is the man's posture.
