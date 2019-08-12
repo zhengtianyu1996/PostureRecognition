@@ -176,7 +176,7 @@ I use Keras, and combine BiLSTM and Dense layer together. Due to the `Standing` 
 
 Tip: `Train-Fall` means only the `Falling` label accuracy in train set. Because this project puts more focus on the `Falling` posture.
 ### 4-5 HOW TO USE IT   
-1. Please use Anaconda to create a new environment. Open the cmd, `cd` to the main foler where the *PostureRecognition.yml* is.    
+1. Please use Anaconda to create a new environment. Open the cmd, `cd` to the main folder where the *PostureRecognition.yml* is.    
   ```conda env create -f PostureRecognition.yml```   
   Then a new env is available. No matther which IDE you are using, make sure to run the `.py` file in the new env.   
 2. run `./data/sample_reduce.py` to generate the training data. Because the data in `./data/Samples/` contains many 'Walking' and 'Standing' labels.   
@@ -186,6 +186,8 @@ Tip: `Train-Fall` means only the `Falling` label accuracy in train set. Because 
 Compared to [ZpRoc](https://github.com/ZpRoc/GestureRecognition), I fix the depth camera with a pillar in a high position (he put the depth camera on the desktop). It influences the performance of Nuitrack to detect the joints. Because Nuitrack suggests developers to put camera in a height [around 0.8m-1.2m](http://download.3divi.com/Nuitrack/doc/Preparations_page.html), but mine is around 2m. I guess the reason of the bad performance is because of the perspective relationship.
 ### 5-2 More data
 I have only 1115 samples in total. Each of them contains about 60 frames. It's not a big dataset. So there should be more data.
+### 5-3 Long cable
+If you want to get a good performance of the depth camera, you should use USB3 cable. I bought a long cable, but it's USB2, so sometimes the connection is bad.
 ## 6 Future Plan
 Due to the bad performance of Nuitrack in detecting joints. We plan to use the raw depth image from the depth camera. Find where is the man, then find what is the man's posture.
 ![depth](./img/Depth.png "depth")
