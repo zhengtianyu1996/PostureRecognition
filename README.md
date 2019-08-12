@@ -4,8 +4,9 @@ This program uses Nuitrack SDK library to detect human body joints. Then input t
 ---
 ## 0 Environment
 - System: Windows 10
-- [Visual Studio 2017](https://msdn.itellyou.cn/)
+- [Visual Studio 2017](https://visualstudio.microsoft.com/vs/older-downloads/)(C# is needed)
 - [PyCharm Community 2019.2](https://www.jetbrains.com/pycharm/download/?utm_source=product&utm_medium=link&utm_campaign=PC&utm_content=2019.1#section=windows)
+- [.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56116)
 ## 1 Real Sense
 All instructions are based on `Real Sense 2.19.0` using `Depth Camera D435`.   
 
