@@ -157,7 +157,7 @@ I use Keras, and combine BiLSTM and Dense layer together. Due to the `Standing` 
 - learning_rate=1e-4
 - learning_rate_decay=1e-6
 ### 4-4 Accuracy
-#### With CRF
+#### With CRF (Conditional Random Field)
 |       |  Train | Train-Fall | Test | Test-Fall |
 | :---: | :------: | :-----: | :-----: | :-----: |
 | 1 |  0.9193   |  0.9414  |   0.9026  |   0.9369  |
