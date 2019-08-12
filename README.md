@@ -193,7 +193,7 @@ Compared to [ZpRoc](https://github.com/ZpRoc/GestureRecognition), I fix the dept
 ### 5-2 More data
 I have only 1115 samples in total. Each of them contains about 60 frames. It's not a big dataset. So there should be more data.
 ### 5-3 Long cable
-If you want to get a good performance of the depth camera, you should use USB3 cable. I bought a long cable, but it's USB2, so sometimes the connection is bad.
+If you want to get a good performance of the depth camera, you should use **USB3** cable. I bought a long cable, but it's USB2, so sometimes the connection is bad.
 ## 6 Future Plan
 Due to the bad performance of Nuitrack in detecting joints. We plan to use the raw depth image from the depth camera. Find where is the man, then find what is the man's posture.
 ![depth](./img/Depth.png "depth")
