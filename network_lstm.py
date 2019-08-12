@@ -74,18 +74,18 @@ def build_model_bilstm_sequence(num_output, input_shape=None, learning_rate = 1e
     model.add(TimeDistributed(BatchNormalization()))
     model.add(TimeDistributed(Dropout(0.4)))
     # model.add(Dense(128, activation='relu', kernel_initializer=initalizer, bias_initializer=initalizer))
-    model.add(TimeDistributed(Dense(num_output, activation="softmax")))
+    # model.add(TimeDistributed(Dense(num_output, activation="softmax")))
 
-    # crf = CRF(num_output, learn_mode='join', test_mode='viterbi',
-    #           kernel_initializer=initalizer, bias_initializer=initalizer, sparse_target=False)
-    # model.add(crf)
+    crf = CRF(num_output, learn_mode='join', test_mode='viterbi',
+              kernel_initializer=initalizer, bias_initializer=initalizer, sparse_target=False)
+    model.add(crf)
 
     # Compiling the model
     # optimizer = optimizers.RMSprop(lr=learning_rate, rho=0.9, epsilon=1e-6, decay=learning_rate_decay)
     # optimizer = optimizers.adadelta()
     optimizer = optimizers.adam(lr=learning_rate, decay=learning_rate_decay)
-    # model.compile(loss=crf_loss, optimizer=optimizer, metrics=[crf_viterbi_accuracy])
-    model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
+    model.compile(loss=crf_loss, optimizer=optimizer, metrics=[crf_viterbi_accuracy])
+    # model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
     return model
 
 

@@ -8,7 +8,6 @@
 # @Version : 1
 # @Feature :
 1. Basic program for BiLSTM network
-2. Remember to run `./data/sample_reduce.py` first to generate necessary data
 
 """
 import os
@@ -24,14 +23,14 @@ from keras_contrib.metrics import crf_viterbi_accuracy, crf_marginal_accuracy
 def main():
     # params
     path_data='./data/'
-    path_data_samples=path_data+'SamplesReduced/'    # run `./data/sample_reduce.py` first
+    path_data_samples=path_data+'SamplesReduced/'
     path_train='./train/'
     path_error='./error/'
 
     rate_testset=0.2                # rate for the testset. All_files * rate
     batch_size_train=16
     batch_size_val=8
-    epochs=15
+    epochs=2
     learning_rate=1e-4
     learning_rate_decay=1e-6
     threshold_error=20              # during testing, if [threshold_error] frames are wrong predictd, then record as error
@@ -84,7 +83,7 @@ def main():
     train_utils.save_model(model, save_dir=path_train, model_base_name='posture_recognition')
     # save curve
     train_utils.save_model_history(model_history, 'loss', save_path=path_train)
-    train_utils.save_model_history(model_history, 'acc', save_path=path_train, show_test_value=True)
+    train_utils.save_model_history(model_history, 'crf_viterbi_accuracy', save_path=path_train, show_test_value=True)
 
 
     # save confusion matrix
