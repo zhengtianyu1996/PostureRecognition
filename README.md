@@ -5,18 +5,12 @@ This program uses Nuitrack SDK library to detect human body joints. Then input t
 ## 1 Real Sense
 All instructions are based on `Real Sense 2.19.0` using `Depth Camera D435`.   
 
-### 1-1 Viewer
-- ### [Intel.RealSense.Viewer](https://github.com/IntelRealSense/librealsense/releases/download/v2.19.0/Intel.RealSense.Viewer.exe)
-  + Executable depth camera control program
-  + Configure depth camera and color camera parameters
-  + Version: 2.19.0
-
-### 1-2 SDK
+### 1-1 Install
 - ### [Intel.RealSense.SDK](https://github.com/IntelRealSense/librealsense/releases/download/v2.19.0/Intel.RealSense.SDK.exe)
   + Installer with `Intel RealSense Viewer and Quality Tool`, `C/C++ Developer Package`, `Python 2.7/3.6 Developer Package`, `.NET Developer Package` and so on.
   + Version: 2.19.0
 
-### 1-3 Extra Information
+### 1-2 Extra Information
 - Latest Version of Viewer and SDK: [Intel RealSense](https://github.com/IntelRealSense/librealsense/releases)
 - https://realsense.intel.com/intel-realsense-downloads
 - [Best Known Methods for Tuning Intel RealSense Depth Cameras D415 and D435](https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/BKMs_Tuning_RealSense_D4xx_Cam.pdf)
@@ -24,18 +18,18 @@ All instructions are based on `Real Sense 2.19.0` using `Depth Camera D435`.
 ## 2 Nuitrack
 All instructions are based on `NUITRACK 1.4.0`
 
-### 2-1 Download
-- SDK: [Nuitrack SDK](https://nuitrack.com/)  
-  Support: Unity, Unreal Engine, C++, C# 
-- Online Documents: [Nuitrack Online](http://download.3divi.com/Nuitrack/doc/)
-
-### 2-2 Install
+### 2-1 Install
 - [Installation Instructions ](http://download.3divi.com/Nuitrack/doc/Installation_page.html)   
   1. Download and run [nuitrack-windows-x64.exe](http://download.3divi.com/Nuitrack/platforms/nuitrack-windows-x64.exe) (for Windows 64-bit). Follow the instructions of the NUITRACK setup assistant. 
   2. Re-login to let the system changes take effect.
   3. Make sure that you have installed Microsoft Visual C++ Redistributable for Visual Studio on your computer. If not, install this package depending on your VS version and architecture:   
       + [Visual C++ Redistributable 2015 (x64)](https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x64.exe)
       + [Visual C++ Redistributable 2017 (x64)](https://aka.ms/vs/15/release/VC_redist.x64.exe)
+
+### 2-2 Documents
+- SDK: [Nuitrack SDK](https://nuitrack.com/)  
+  Support: Unity, Unreal Engine, C++, C# 
+- Online Documents: [Nuitrack Online](http://download.3divi.com/Nuitrack/doc/)
 
 ### 2-3 Examples
 -   [nuitrack_console_sample/src/main.cpp](http://download.3divi.com/Nuitrack/doc/nuitrack_console_sample_2src_2main_8cpp-example.html)
@@ -44,8 +38,10 @@ All instructions are based on `NUITRACK 1.4.0`
 -   [nuitrack_ni_gl_sample/src/main.cpp](http://download.3divi.com/Nuitrack/doc/nuitrack_ni_gl_sample_2src_2main_8cpp-example.html)
 
 ## 3 Software Framework
+
 ### 3-1 Interface-1: Grab
 ![interface-1](./img/interface-1.png "Interface-1: Grab")
+
 #### 1. Show Image
   Display the RGB image, and the skeleton data by red square dots.
 #### 2. Show Label
@@ -72,8 +68,10 @@ All instructions are based on `NUITRACK 1.4.0`
   Open the file dialog and choose a sample. Then make the prediction using the loaded model.
 #### 12. Tap Option
   Click different tap option to switch between `Grab` and `Label`. `Grab` is used for grab videos. `Label` is used for making labels.
+
 ### 3-2 Interface-2: Label
 ![interface-2](./img/interface-2.png "Interface-2: Label")
+
 #### 13. Load Data
   Select a `.txt` file. The file contains frame indices and skeleton data during the whole video.
 #### 14. Frame List
@@ -105,6 +103,7 @@ All instructions are based on `NUITRACK 1.4.0`
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- Data_labels.md: Indices and labels    
 
 ### 3-4 HOW TO USE IT: RealTime Predicting
+
 #### 3-4-1 Capture only
 - Make sure the depth camera is connected.
 - Click `5. Grab`, `1. Show Image` will display images in real time.
@@ -133,8 +132,10 @@ All instructions are based on `NUITRACK 1.4.0`
 - [One-Click Function] If you pressed `Shift` key, no matter in which mode, click the `Generate` button. Choose a folder that contains all the `yyyy-MM-dd HH-mm-ss` folders. The program will automatically generate samples through all the folders.
 #### 3-4-8 Search
 - Choose an existing label from the left box. Then click `◀` and `▶` to search for the last or next one.
+
 ## 4 Deep Learning
 All the code is mainly based on `Python 3.7` and `Keras`. I utilize Bidirectional LSTM layer and Dense layer. The final accuracy is around 91%.
+
 ### 4-1 Network structure
 I use Keras, and combine BiLSTM and Dense layer together. Due to the `Standing` and `Walking` is hard to distinguish. Even in the software framework, I make 2 labels for them. But when it turns to deep learning training, I regard these 2 labels as one label `Walking`. So there are only 5 classes in the end.   
 ![network](./img/network.png "network")
@@ -181,7 +182,9 @@ Tip: `Train-Fall` means only the `Falling` label accuracy in train set. Because 
   Then a new env is available. No matther which IDE you are using, make sure to run the `.py` file in the new env.   
 2. run `./data/sample_reduce.py` to generate the training data. Because the data in `./data/Samples/` contains many 'Walking' and 'Standing' labels.   
 3. run `train_sequence.py` to do the training and validation.
+
 ## 5 Issues
+
 ### 5-1 Unstable detecting for human joints because of a high position
 Compared to [ZpRoc](https://github.com/ZpRoc/GestureRecognition), I fix the depth camera with a pillar in a high position (he put the depth camera on the desktop). It influences the performance of Nuitrack to detect the joints. Because Nuitrack suggests developers to put camera in a height [around 0.8m-1.2m](http://download.3divi.com/Nuitrack/doc/Preparations_page.html), but mine is around 2m. I guess the reason of the bad performance is because of the perspective relationship.
 ### 5-2 More data
