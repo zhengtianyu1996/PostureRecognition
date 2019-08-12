@@ -104,7 +104,7 @@ All instructions are based on `NUITRACK 1.4.0`
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- Data.txt: Indices and skeleton data   
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- Data_labels.md: Indices and labels    
 
-### 3-4 RealTime Predicting
+### 3-4 HOW TO USE IT: RealTime Predicting
 #### 3-4-1 Capture only
 - Make sure the depth camera is connected.
 - Click `5. Grab`, `1. Show Image` will display images in real time.
@@ -130,7 +130,7 @@ All instructions are based on `NUITRACK 1.4.0`
 #### 3-4-7 Generate
 - If you choose `Auto` mode, click the `Generate` button. The program will generate many samples from the whole `14. Frame List`.
 - If you choose `Mann` mode, you need to choose some frames and click the `Generate` button. The program will generate only one sample according to the chosen frames.
-- [One-Click Function] If you pressed `Shift` key, no matter in which mode, click the `Generate` button. Choose a father folder that contains all the `yyyy-MM-dd HH-mm-ss` folders. The program will automatically generate samples through all the folders.
+- [One-Click Function] If you pressed `Shift` key, no matter in which mode, click the `Generate` button. Choose a folder that contains all the `yyyy-MM-dd HH-mm-ss` folders. The program will automatically generate samples through all the folders.
 #### 3-4-8 Search
 - Choose an existing label from the left box. Then click `◀` and `▶` to search for the last or next one.
 ## 4 Deep Learning
@@ -175,6 +175,13 @@ I use Keras, and combine BiLSTM and Dense layer together. Due to the `Standing` 
 | 5 |  0.9138   |  0.9426  |   0.8996  |   0.9357  |   
 
 Tip: `Train-Fall` means only the `Falling` label accuracy in train set. Because this project puts more focus on the `Falling` posture.
+### 4-5 HOW TO USE IT
+1. Please use Anaconda to create a new environment. Open the cmd, `cd` to the main foler where the `PostureRecognition.yml` is.    
+>`conda env create -f PostureRecognition.yml`   
+
+Then a new env is available. No matther which IDE you are using, make sure to run the `.py` file in the new env.   
+2. run `./data/sample_reduce.py` to generate the training data. Because the data in `./data/Samples/` contains many 'Walking' and 'Standing' labels.   
+3. run `train_sequence.py` to do the training and validation.
 ## 5 Issues
 ### 5-1 Unstable detecting for human joints because of a high position
 Compared to [ZpRoc](https://github.com/ZpRoc/GestureRecognition), I fix the depth camera with a pillar in a high position (he put the depth camera on the desktop). It influences the performance of Nuitrack to detect the joints. Because Nuitrack suggests developers to put camera in a height [around 0.8m-1.2m](http://download.3divi.com/Nuitrack/doc/Preparations_page.html), but mine is around 2m. I guess the reason of the bad performance is because of the perspective relationship.
