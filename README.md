@@ -2,6 +2,10 @@
 This program uses Nuitrack SDK library to detect human body joints. Then input these data into a BiLSTM network to make posture prediction.
 
 ---
+## 0 Environment
+- System: Windows 10
+- [Visual Studio 2017](https://msdn.itellyou.cn/)
+- [PyCharm Community 2019.2](https://www.jetbrains.com/pycharm/download/?utm_source=product&utm_medium=link&utm_campaign=PC&utm_content=2019.1#section=windows)
 ## 1 Real Sense
 All instructions are based on `Real Sense 2.19.0` using `Depth Camera D435`.   
 
