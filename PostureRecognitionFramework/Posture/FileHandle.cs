@@ -72,21 +72,21 @@ namespace Posture
             // Set the data txt file
             m_dataFile = Path.Combine(m_outputFolder, m_DATA_FILE_NAME);
 
-            // Set label folder
-            m_labelFolder = Path.Combine(m_outputFolder, m_LABEL_FOLDER_NAME);
-            if (!Directory.Exists(m_labelFolder))
-            {
-                Directory.CreateDirectory(m_labelFolder);
-            }
+            //// Set label folder
+            //m_labelFolder = Path.Combine(m_outputFolder, m_LABEL_FOLDER_NAME);
+            //if (!Directory.Exists(m_labelFolder))
+            //{
+            //    Directory.CreateDirectory(m_labelFolder);
+            //}
 
-            for (int i = 0; i < m_labelnames.Length; i++)
-            {
-                string tmpFolder = Path.Combine(m_labelFolder, m_labelnames[i]);
-                if (!Directory.Exists(tmpFolder))
-                {
-                    Directory.CreateDirectory(tmpFolder);
-                }
-            }
+            //for (int i = 0; i < m_labelnames.Length; i++)
+            //{
+            //    string tmpFolder = Path.Combine(m_labelFolder, m_labelnames[i]);
+            //    if (!Directory.Exists(tmpFolder))
+            //    {
+            //        Directory.CreateDirectory(tmpFolder);
+            //    }
+            //}
         }
 
 

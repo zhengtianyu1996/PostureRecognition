@@ -216,21 +216,28 @@ namespace Posture
                     TFTensor testPct = tfRunner.Run(m_tfGraph["output_1"][0]);
                     Trace.WriteLine(string.Format("Time: {0}", (DateTime.Now - time).TotalMilliseconds.ToString()));
 
+                    // todo: [,] -> []
                     // Get the label with max value
-                    float[] runTestPct = (float[])testPct.GetValue();
+                    float[,] pred_timesteps = (float[,])testPct.GetValue();
+                    float[] pred_last_step = new float[pred_timesteps.GetUpperBound(1)+1];
+                    for (int i = 0; i < pred_timesteps.GetUpperBound(1); i++)
+                    {
+                        pred_last_step[i] = pred_timesteps[pred_timesteps.GetUpperBound(0), i];
+                    }
+                    //float[] runTestPct = (float[])testPct.GetValue();
                     float maxValue = 0;
                     int maxIndex   = -1;
-                    for (int i = 0; i < runTestPct.Length; i++)
+                    for (int i = 0; i < pred_last_step.Length; i++)
                     {
-                        if (runTestPct[i] > maxValue)
+                        if (pred_last_step[i] > maxValue)
                         {
-                            maxValue = runTestPct[i];
+                            maxValue = pred_last_step[i];
                             maxIndex = i;
                         }
                     }
 
                     // Disp
-                    labelDisp.Text = m_LABELNAMES[maxIndex];
+                    labelDisp.Text = m_LABELNAMES[maxIndex+1]; //+1 because we combine walking and standing together as walking
                     labelDisp.Refresh();
 
                     // Remove the old (m_tfList.Count/2) data
@@ -983,6 +990,108 @@ namespace Posture
                 MessageBox.Show(output);
 				Trace.WriteLine(output);
                 return;
+            }
+        }
+
+        #endregion
+
+        #region Open label folder
+
+        /// <summary>
+        /// Open Stand label folder
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonStandingCnt_Click(object sender, EventArgs e)
+        {
+            string folderUrl = Path.Combine(m_fileHandle.LabelFolder, m_LABELNAMES[0]);
+            if (Directory.Exists(folderUrl))
+            {
+                Process.Start(folderUrl);
+            }
+        }
+
+        /// <summary>
+        /// Open Sit label folder
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonSittingCnt_Click(object sender, EventArgs e)
+        {
+            string folderUrl = Path.Combine(m_fileHandle.LabelFolder, m_LABELNAMES[1]);
+            if (Directory.Exists(folderUrl))
+            {
+                Process.Start(folderUrl);
+            }
+        }
+
+        /// <summary>
+        /// Open Walking label folder
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonWalkingCnt_Click(object sender, EventArgs e)
+        {
+            string folderUrl = Path.Combine(m_fileHandle.LabelFolder, m_LABELNAMES[2]);
+            if (Directory.Exists(folderUrl))
+            {
+                Process.Start(folderUrl);
+            }
+        }
+
+        /// <summary>
+        /// Open StandUp label folder
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonStandUpCnt_Click(object sender, EventArgs e)
+        {
+            string folderUrl = Path.Combine(m_fileHandle.LabelFolder, m_LABELNAMES[3]);
+            if (Directory.Exists(folderUrl))
+            {
+                Process.Start(folderUrl);
+            }
+        }
+
+        /// <summary>
+        /// Open SitDown label folder
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonSitDownCnt_Click(object sender, EventArgs e)
+        {
+            string folderUrl = Path.Combine(m_fileHandle.LabelFolder, m_LABELNAMES[4]);
+            if (Directory.Exists(folderUrl))
+            {
+                Process.Start(folderUrl);
+            }
+        }
+
+        /// <summary>
+        /// Open TurnBack label folder
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonTurnbackCnt_Click(object sender, EventArgs e)
+        {
+            string folderUrl = Path.Combine(m_fileHandle.LabelFolder, m_LABELNAMES[5]);
+            if (Directory.Exists(folderUrl))
+            {
+                 System.Diagnostics.Process.Start(folderUrl);
+            }
+        }
+
+        /// <summary>
+        /// Open Other label folder
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonOthersCnt_Click(object sender, EventArgs e)
+        {
+            string folderUrl = Path.Combine(m_fileHandle.LabelFolder, m_LABELNAMES[6]);
+            if (Directory.Exists(folderUrl))
+            {
+                Process.Start(folderUrl);
             }
         }
 
