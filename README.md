@@ -175,11 +175,10 @@ I use Keras, and combine BiLSTM and Dense layer together. Due to the `Standing` 
 | 5 |  0.9138   |  0.9426  |   0.8996  |   0.9357  |   
 
 Tip: `Train-Fall` means only the `Falling` label accuracy in train set. Because this project puts more focus on the `Falling` posture.
-### 4-5 HOW TO USE IT
-1. Please use Anaconda to create a new environment. Open the cmd, `cd` to the main foler where the `PostureRecognition.yml` is.    
->`conda env create -f PostureRecognition.yml`   
-
-Then a new env is available. No matther which IDE you are using, make sure to run the `.py` file in the new env.   
+### 4-5 HOW TO USE IT   
+1. Please use Anaconda to create a new environment. Open the cmd, `cd` to the main foler where the *PostureRecognition.yml* is.    
+  ```conda env create -f PostureRecognition.yml```   
+  Then a new env is available. No matther which IDE you are using, make sure to run the `.py` file in the new env.   
 2. run `./data/sample_reduce.py` to generate the training data. Because the data in `./data/Samples/` contains many 'Walking' and 'Standing' labels.   
 3. run `train_sequence.py` to do the training and validation.
 ## 5 Issues
@@ -189,3 +188,4 @@ Compared to [ZpRoc](https://github.com/ZpRoc/GestureRecognition), I fix the dept
 I have only 1115 samples in total. Each of them contains about 60 frames. It's not a big dataset. So there should be more data.
 ## 6 Future Plan
 Due to the bad performance of Nuitrack in detecting joints. We plan to use the raw depth image from the depth camera. Find where is the man, then find what is the man's posture.
+![depth](./img/Depth.png "depth")
