@@ -194,6 +194,8 @@ Compared to [ZpRoc](https://github.com/ZpRoc/GestureRecognition), I fix the dept
 I have only 1115 samples in total. Each of them contains about 60 frames. It's not a big dataset. So there should be more data.
 ### 5-3 Long cable
 If you want to get a good performance of the depth camera, you should use **USB3** cable. I bought a long cable, but it's USB2, so sometimes the connection is bad.
+### 5-4 Joints match human body
+As you see from the software framework image just now, the joints don't match the human body so well. It's because the human body comes from RGB camera, and joints data come from depth camera. So if we want to match them, we need to do calibration.
 ## 6 Future Plan
 Due to the bad performance of Nuitrack in detecting joints. We plan to use the raw depth image from the depth camera. Find where is the man, then find what is the man's posture.
 ![depth](./img/Depth.png "depth")
