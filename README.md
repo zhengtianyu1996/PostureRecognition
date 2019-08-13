@@ -1,6 +1,31 @@
-# PostureRecognition
-This program uses Nuitrack SDK library to detect human body joints. Then input these data into a BiLSTM network to make posture prediction.
+# PostureRecognition   
+This program uses Nuitrack SDK library to detect human body joints. Then input these data into a BiLSTM network to make posture prediction.  
 
+---
+- [0 Environment](#0-environment)
+- [1 Real Sense](#1-real-sense)
+  * [1-1 Install](#1-1-install)
+  * [[Intel.RealSense.SDK](https://github.com/IntelRealSense/librealsense/releases/download/v2.19.0/Intel.RealSense.SDK.exe)](#-intelrealsensesdk--https---githubcom-intelrealsense-librealsense-releases-download-v2190-intelrealsensesdkexe-)
+  * [1-2 Extra Information](#1-2-extra-information)
+- [2 Nuitrack](#2-nuitrack)
+  * [2-1 Install](#2-1-install)
+  * [2-2 Documents](#2-2-documents)
+- [3 Software Framework](#3-software-framework)
+  * [3-1 Interface-1: Grab](#3-1-interface-1--grab)
+  * [3-2 Interface-2: Label](#3-2-interface-2--label)
+  * [3-3 Folder Tree](#3-3-folder-tree)
+  * [3-4 HOW TO USE IT](#3-4-how-to-use-it)
+- [4 Deep Learning](#4-deep-learning)
+  * [4-1 Network structure](#4-1-network-structure)
+  * [4-2 Data distribution](#4-2-data-distribution)
+  * [4-3 Training Parameters](#4-3-training-parameters)
+  * [4-4 Accuracy](#4-4-accuracy)
+  * [4-5 HOW TO USE IT](#4-5-how-to-use-it)
+- [5 Issues](#5-issues)
+  * [5-1 Unstable detecting for human joints because of a high position](#5-1-unstable-detecting-for-human-joints-because-of-a-high-position)
+  * [5-2 More data](#5-2-more-data)
+  * [5-3 Long cable](#5-3-long-cable)
+  * [5-4 Joints match human body](#5-4-joints-match-human-body)
 ---
 ## 0 Environment
 - System: Windows 10
@@ -105,7 +130,7 @@ All instructions are based on `NUITRACK 1.4.0`
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- Data.txt: Indices and skeleton data   
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- Data_labels.md: Indices and labels    
 
-### 3-4 HOW TO USE IT: RealTime Predicting
+### 3-4 HOW TO USE IT
 
 #### 3-4-1 Capture only
 - Make sure the depth camera is connected.
