@@ -26,6 +26,7 @@ This program uses Nuitrack SDK library to detect human body joints. Then input t
   * [5-2 More data](#5-2-more-data)
   * [5-3 Long cable](#5-3-long-cable)
   * [5-4 Joints match human body](#5-4-joints-match-human-body)
+- [6 Future Plan](#6-Future-Plan)
 ---
 ## 0 Environment
 - System: Windows 10
