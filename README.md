@@ -5,7 +5,6 @@ This program uses Nuitrack SDK library to detect human body joints. Then input t
 - [0 Environment](#0-environment)
 - [1 Real Sense](#1-real-sense)
   * [1-1 Install](#1-1-install)
-  * [[Intel.RealSense.SDK](https://github.com/IntelRealSense/librealsense/releases/download/v2.19.0/Intel.RealSense.SDK.exe)](#-intelrealsensesdk--https---githubcom-intelrealsense-librealsense-releases-download-v2190-intelrealsensesdkexe-)
   * [1-2 Extra Information](#1-2-extra-information)
 - [2 Nuitrack](#2-nuitrack)
   * [2-1 Install](#2-1-install)
@@ -37,7 +36,7 @@ This program uses Nuitrack SDK library to detect human body joints. Then input t
 All instructions are based on `Real Sense 2.19.0` using `Depth Camera D435`.   
 
 ### 1-1 Install
-- ### [Intel.RealSense.SDK](https://github.com/IntelRealSense/librealsense/releases/download/v2.19.0/Intel.RealSense.SDK.exe)
+- **[Intel.RealSense.SDK](https://github.com/IntelRealSense/librealsense/releases/download/v2.19.0/Intel.RealSense.SDK.exe)**
   + Installer with `Intel RealSense Viewer and Quality Tool`, `C/C++ Developer Package`, `Python 2.7/3.6 Developer Package`, `.NET Developer Package` and so on.
   + Version: 2.19.0
 
